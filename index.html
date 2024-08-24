@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakalti Mobile OS 1.0</title>
+    <link rel="stylesheet" href="styles.css"> <!-- 提供したCSSファイル -->
+</head>
+<body>
+    <div id="desktop">
+        <!-- スタートメニュー -->
+        <div id="startMenu" class="start-menu">
+            <ul>
+                <li><button onclick="openApp('notepad')">メモ帳</button></li>
+                <li><button onclick="openApp('weather')">天気</button></li>
+                <li><button onclick="openApp('calculator')">計算機</button></li>
+                <li><button onclick="openApp('dictionary')">辞書</button></li>
+                <li><button onclick="openApp('gallery')">ギャラリー</button></li>
+                <li><button onclick="openApp('music')">音楽</button></li>
+                <li><button onclick="openApp('browser')">ブラウザ</button></li>
+                <li><button onclick="openApp('settings')">設定</button></li>
+                <li><button onclick="openApp('clock')">時計</button></li>
+            </ul>
+        </div>
+
+        <!-- タスクバー -->
+        <div id="taskbar">
+            <div class="taskbar-item" onclick="openApp('notepad')">
+                <img src="icon1.png" alt="アイコン1">
+            </div>
+            <div class="taskbar-item" onclick="openApp('weather')">
+                <img src="icon2.png" alt="アイコン2">
+            </div>
+            <div class="taskbar-item" onclick="openApp('calculator')">
+                <img src="icon3.png" alt="アイコン3">
+            </div>
+            <div class="taskbar-item" onclick="openApp('dictionary')">
+                <img src="icon4.png" alt="アイコン4">
+            </div>
+            <div class="taskbar-item" onclick="openApp('gallery')">
+                <img src="icon5.png" alt="アイコン5">
+            </div>
+            <div class="taskbar-item" onclick="openApp('music')">
+                <img src="icon6.png" alt="アイコン6">
+            </div>
+            <div class="taskbar-item" onclick="openApp('browser')">
+                <img src="icon7.png" alt="アイコン7">
+            </div>
+            <div class="taskbar-item" onclick="openApp('settings')">
+                <img src="icon8.png" alt="アイコン8">
+            </div>
+            <div class="taskbar-item" onclick="openApp('clock')">
+                <img src="icon9.png" alt="アイコン9">
+            </div>
+        </div>
+
+        <!-- アプリケーション -->
+        <div id="apps">
+            <!-- メモ帳アプリ -->
+            <div id="notepad" class="app">
+                <textarea placeholder="ここにメモを入力..."></textarea>
+            </div>
+
+            <!-- 天気アプリ -->
+            <div id="weather" class="app">
+                <iframe id="weather-frame" src="weather-widget.html"></iframe>
+            </div>
+
+            <!-- 計算機アプリ -->
+            <div id="calculator" class="app">
+                <div id="calc-display">0</div>
+                <div id="calc-buttons">
+                    <button onclick="calcInput('1')">1</button>
+                    <button onclick="calcInput('2')">2</button>
+                    <button onclick="calcInput('3')">3</button>
+                    <button onclick="calcInput('+')">+</button>
+                    <button onclick="calcInput('4')">4</button>
+                    <button onclick="calcInput('5')">5</button>
+                    <button onclick="calcInput('6')">6</button>
+                    <button onclick="calcInput('-')">-</button>
+                    <button onclick="calcInput('7')">7</button>
+                    <button onclick="calcInput('8')">8</button>
+                    <button onclick="calcInput('9')">9</button>
+                    <button onclick="calcInput('*')">*</button>
+                    <button onclick="calcInput('0')">0</button>
+                    <button onclick="calcClear()">C</button>
+                    <button onclick="calcCalculate()">=</button>
+                    <button onclick="calcInput('/')">/</button>
+                </div>
+            </div>
+
+            <!-- 辞書アプリ -->
+            <div id="dictionary" class="app">
+                <iframe src="https://dictionary.com" style="width:100%; height:100%; border:none;"></iframe>
+            </div>
+
+            <!-- ギャラリーアプリ -->
+            <div id="gallery" class="app">
+                <img id="gallery-img" src="sample.jpg" alt="サンプル画像">
+                <button onclick="nextImage()">次へ</button>
+            </div>
+
+            <!-- 音楽アプリ -->
+            <div id="music" class="app">
+                <audio controls>
+                    <source src="audio.mp3" type="audio/mp3">
+                    お使いのブラウザは音声要素に対応していません。
+                </audio>
+            </div>
+
+            <!-- ブラウザアプリ -->
+            <div id="browser" class="app">
+                <iframe src="https://example.com" id="browser-frame"></iframe>
+            </div>
+
+            <!-- 設定アプリ -->
+            <div id="settings" class="app">
+                <p>設定パネル</p>
+                <button onclick="changeBackground()">背景を変更</button>
+            </div>
+
+            <!-- 時計アプリ -->
+            <div id="clock" class="app">
+                <div id="clock-display">12:00</div>
+            </div>
+        </div>
+
+        <!-- ウィジェット -->
+        <div id="widgets">
+            <div class="widget">
+                <h3>ウィジェット1</h3>
+                <p>内容1</p>
+            </div>
+            <div class="widget">
+                <h3>ウィジェット2</h3>
+                <p>内容2</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
