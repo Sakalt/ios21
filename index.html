@@ -26,31 +26,31 @@
         <!-- タスクバー -->
         <div id="taskbar">
             <div class="taskbar-item" onclick="openApp('notepad')">
-                <img src="icon1.png" alt="アイコン1">
+                <img src="i/notepad-icon.png" alt="メモ帳">
             </div>
             <div class="taskbar-item" onclick="openApp('weather')">
-                <img src="icon2.png" alt="アイコン2">
+                <img src="i/weather-icon.png" alt="天気">
             </div>
             <div class="taskbar-item" onclick="openApp('calculator')">
-                <img src="icon3.png" alt="アイコン3">
+                <img src="i/calculator-icon.png" alt="計算機">
             </div>
             <div class="taskbar-item" onclick="openApp('dictionary')">
-                <img src="icon4.png" alt="アイコン4">
+                <img src="i/dictionary-icon.png" alt="辞書">
             </div>
             <div class="taskbar-item" onclick="openApp('gallery')">
-                <img src="icon5.png" alt="アイコン5">
+                <img src="i/gallery-icon.png" alt="ギャラリー">
             </div>
             <div class="taskbar-item" onclick="openApp('music')">
-                <img src="icon6.png" alt="アイコン6">
+                <img src="i/music-icon.png" alt="音楽">
             </div>
             <div class="taskbar-item" onclick="openApp('browser')">
-                <img src="icon7.png" alt="アイコン7">
+                <img src="i/browser-icon.png" alt="ブラウザ">
             </div>
             <div class="taskbar-item" onclick="openApp('settings')">
-                <img src="icon8.png" alt="アイコン8">
+                <img src="i/settings-icon.png" alt="設定">
             </div>
             <div class="taskbar-item" onclick="openApp('clock')">
-                <img src="icon9.png" alt="アイコン9">
+                <img src="i/clock-icon.png" alt="時計">
             </div>
         </div>
 
@@ -63,7 +63,7 @@
 
             <!-- 天気アプリ -->
             <div id="weather" class="app">
-                <iframe id="weather-frame" src="weather-widget.html"></iframe>
+                <iframe id="weather-frame" src="https://wttr.in/?format=3" style="width:100%; height:100%; border:none;"></iframe>
             </div>
 
             <!-- 計算機アプリ -->
@@ -96,21 +96,21 @@
 
             <!-- ギャラリーアプリ -->
             <div id="gallery" class="app">
-                <img id="gallery-img" src="sample.jpg" alt="サンプル画像">
+                <img id="gallery-img" src="i/sample.jpg" alt="サンプル画像">
                 <button onclick="nextImage()">次へ</button>
             </div>
 
             <!-- 音楽アプリ -->
             <div id="music" class="app">
                 <audio controls>
-                    <source src="audio.mp3" type="audio/mp3">
+                    <source src="i/audio.mp3" type="audio/mp3">
                     お使いのブラウザは音声要素に対応していません。
                 </audio>
             </div>
 
             <!-- ブラウザアプリ -->
             <div id="browser" class="app">
-                <iframe src="https://example.com" id="browser-frame"></iframe>
+                <iframe src="https://www.bing.com" id="browser-frame" style="width:100%; height:100%; border:none;"></iframe>
             </div>
 
             <!-- 設定アプリ -->
@@ -127,13 +127,13 @@
 
         <!-- ウィジェット -->
         <div id="widgets">
-            <div class="widget">
-                <h3>ウィジェット1</h3>
-                <p>内容1</p>
+            <div id="weather-widget" class="widget">
+                <h3>天気</h3>
+                <p>今日の天気情報</p>
             </div>
-            <div class="widget">
-                <h3>ウィジェット2</h3>
-                <p>内容2</p>
+            <div id="clock-widget" class="widget">
+                <h3>時計</h3>
+                <p id="clock-display">12:00</p>
             </div>
         </div>
     </div>
