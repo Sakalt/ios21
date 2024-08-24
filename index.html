@@ -9,7 +9,7 @@
 <body>
     <div id="desktop">
         <!-- スタートメニュー -->
-        <div id="startMenu" class="start-menu">
+        <div id="startMenu" class="start-menu" style="display: none;">
             <ul>
                 <li><button onclick="openApp('notepad')">メモ帳</button></li>
                 <li><button onclick="openApp('weather')">天気</button></li>
@@ -34,9 +34,6 @@
             <div class="taskbar-item" onclick="openApp('calculator')">
                 <img src="i/calculator-icon.png" alt="計算機">
             </div>
-            <div class="taskbar-item" onclick="openApp('dictionary')">
-                <img src="i/dictionary-icon.png" alt="辞書">
-            </div>
             <div class="taskbar-item" onclick="openApp('gallery')">
                 <img src="i/gallery-icon.png" alt="ギャラリー">
             </div>
@@ -49,8 +46,6 @@
             <div class="taskbar-item" onclick="openApp('settings')">
                 <img src="i/settings-icon.png" alt="設定">
             </div>
-            <div class="taskbar-item" onclick="openApp('clock')">
-                <img src="i/clock-icon.png" alt="時計">
             </div>
         </div>
 
@@ -58,16 +53,40 @@
         <div id="apps">
             <!-- メモ帳アプリ -->
             <div id="notepad" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'notepad')">
+                    <span>メモ帳</span>
+                    <div>
+                        <button onclick="openApp('notepad')">−</button>
+                        <button onclick="openApp('notepad')">□</button>
+                        <button onclick="openApp('notepad')">×</button>
+                    </div>
+                </div>
                 <textarea placeholder="ここにメモを入力..."></textarea>
             </div>
 
             <!-- 天気アプリ -->
             <div id="weather" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'weather')">
+                    <span>天気</span>
+                    <div>
+                        <button onclick="openApp('weather')">−</button>
+                        <button onclick="openApp('weather')">□</button>
+                        <button onclick="openApp('weather')">×</button>
+                    </div>
+                </div>
                 <iframe id="weather-frame" src="https://wttr.in/?format=3" style="width:100%; height:100%; border:none;"></iframe>
             </div>
 
             <!-- 計算機アプリ -->
             <div id="calculator" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'calculator')">
+                    <span>計算機</span>
+                    <div>
+                        <button onclick="openApp('calculator')">−</button>
+                        <button onclick="openApp('calculator')">□</button>
+                        <button onclick="openApp('calculator')">×</button>
+                    </div>
+                </div>
                 <div id="calc-display">0</div>
                 <div id="calc-buttons">
                     <button onclick="calcInput('1')">1</button>
@@ -91,17 +110,41 @@
 
             <!-- 辞書アプリ -->
             <div id="dictionary" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'dictionary')">
+                    <span>辞書</span>
+                    <div>
+                        <button onclick="openApp('dictionary')">−</button>
+                        <button onclick="openApp('dictionary')">□</button>
+                        <button onclick="openApp('dictionary')">×</button>
+                    </div>
+                </div>
                 <iframe src="https://dictionary.com" style="width:100%; height:100%; border:none;"></iframe>
             </div>
 
             <!-- ギャラリーアプリ -->
             <div id="gallery" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'gallery')">
+                    <span>ギャラリー</span>
+                    <div>
+                        <button onclick="openApp('gallery')">−</button>
+                        <button onclick="openApp('gallery')">□</button>
+                        <button onclick="openApp('gallery')">×</button>
+                    </div>
+                </div>
                 <img id="gallery-img" src="i/sample.jpg" alt="サンプル画像">
                 <button onclick="nextImage()">次へ</button>
             </div>
 
             <!-- 音楽アプリ -->
             <div id="music" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'music')">
+                    <span>音楽</span>
+                    <div>
+                        <button onclick="openApp('music')">−</button>
+                        <button onclick="openApp('music')">□</button>
+                        <button onclick="openApp('music')">×</button>
+                    </div>
+                </div>
                 <audio controls>
                     <source src="i/audio.mp3" type="audio/mp3">
                     お使いのブラウザは音声要素に対応していません。
@@ -110,17 +153,41 @@
 
             <!-- ブラウザアプリ -->
             <div id="browser" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'browser')">
+                    <span>ブラウザ</span>
+                    <div>
+                        <button onclick="openApp('browser')">−</button>
+                        <button onclick="openApp('browser')">□</button>
+                        <button onclick="openApp('browser')">×</button>
+                    </div>
+                </div>
                 <iframe src="https://www.bing.com" id="browser-frame" style="width:100%; height:100%; border:none;"></iframe>
             </div>
 
             <!-- 設定アプリ -->
             <div id="settings" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'settings')">
+                    <span>設定</span>
+                    <div>
+                        <button onclick="openApp('settings')">−</button>
+                        <button onclick="openApp('settings')">□</button>
+                        <button onclick="openApp('settings')">×</button>
+                    </div>
+                </div>
                 <p>設定パネル</p>
                 <button onclick="changeBackground()">背景を変更</button>
             </div>
 
             <!-- 時計アプリ -->
             <div id="clock" class="app">
+                <div class="app-header" onmousedown="startDrag(event, 'clock')">
+                    <span>時計</span>
+                    <div>
+                        <button onclick="openApp('clock')">−</button>
+                        <button onclick="openApp('clock')">□</button>
+                        <button onclick="openApp('clock')">×</button>
+                    </div>
+                </div>
                 <div id="clock-display">12:00</div>
             </div>
         </div>
